@@ -57,3 +57,13 @@ exports.deleteTask = async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 };
+
+exports.deleteAllTask = async (req, res) => {
+  try{
+
+    await Task.deleteMany({});
+
+  }catch (error) {
+    res.status(500).json({error: error.message});
+  }
+}
